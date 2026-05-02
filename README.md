@@ -22,7 +22,7 @@ Gestão: Metodologia Ágil (Scrum) via Trello.
 Clonar o repositório:
 
 Bash
-git clone https://github.com/seu-usuario/descubra-paulista.git
+git clone https://github.com/paulorafaeldv/projeto-descubra-paulista.git
 
 2.  **Configurar o Banco de Dados:**
     *   Crie um banco de dados local.

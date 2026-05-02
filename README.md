@@ -1,11 +1,11 @@
 # Descubra Paulista - API de Turismo e Cultura
-📝 Descrição do Projeto
+## 📝 Descrição do Projeto
 O Descubra Paulista é uma plataforma digital desenvolvida para fomentar o turismo sustentável e a valorização cultural na cidade de Paulista, Pernambuco. O sistema funciona como um guia interativo, conectando cidadãos e turistas aos pontos históricos, eventos e empreendedores locais.
 
-🎯 Objetivo (Problema que resolve)
+## 🎯 Objetivo (Problema que resolve)
 O projeto visa resolver a fragmentação de informações sobre o lazer e a cultura na região. Ao centralizar a agenda de eventos e oferecer roteiros personalizados, o app facilita o acesso da população às atividades da cidade e impulsiona a economia criativa, oferecendo visibilidade aos artesãos e produtores culturais locais.
 
-🛠 Tecnologias Usadas
+## 🛠 Tecnologias Usadas
 Linguagem: Java.
 
 Framework: Spring Boot.
@@ -18,7 +18,7 @@ Versionamento: Git & GitHub.
 
 Gestão: Metodologia Ágil (Scrum) via Trello.
 
-🚀 Como rodar o projeto
+## 🚀 Como rodar o projeto
 Clonar o repositório:
 
 Bash
@@ -43,6 +43,5 @@ Abaixo estão as principais rotas baseadas na modelagem de dados:
 ## 🧪 Como rodar testes
 
 👥 Integrantes do Grupo
-Paulo Rafael Brandão Santos (Líder/Desenvolvedor Backend).
+Paulo Rafael Brandão Santos (Scrum Master/Desenvolvedor Backend).
 
-(Espaço para os outros 6 membros da equipe).

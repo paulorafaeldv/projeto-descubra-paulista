@@ -44,11 +44,17 @@ Abaixo estão as principais rotas baseadas na modelagem de dados:
 
 ## 👥 Integrantes do Grupo
 Hercilio de Sena Sales - 01817900
+
 Kauê Pimentel dos Santos Costa - 01775988
+
 Kelly Ferreira da Silva - 01832940
+
 Maria Eduarda da Conceição Souza - 01810116
+
 Maria Eduarda Silva de Oliveira - 01831554
+
 Maria Fernanda da Silva Costa - 01744866
+
 Paulo Rafael Brandão Santos - (Scrum Master / Desenvolvedor Backend)
 
 

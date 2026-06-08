@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class StatusController {
 
-    @GetMapping("/teste")
+    @GetMapping("/status")
     public String status() {
         return "Servidor rodando com sucesso!";
     }

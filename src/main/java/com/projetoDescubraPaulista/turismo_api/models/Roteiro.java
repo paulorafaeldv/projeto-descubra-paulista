@@ -1,4 +1,4 @@
-package com.descubrapaulista.model;
+package com.projetoDescubraPaulista.turismo_api.models;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

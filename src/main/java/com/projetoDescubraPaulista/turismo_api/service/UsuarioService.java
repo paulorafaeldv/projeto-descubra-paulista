@@ -1,8 +1,8 @@
-package com.descubrapaulista.service;
+package com.projetoDescubraPaulista.turismo_api.service;
 
-import com.descubrapaulista.exception.ResourceNotFoundException;
-import com.descubrapaulista.model.Usuario;
-import com.descubrapaulista.repository.UsuarioRepository;
+import com.projetoDescubraPaulista.turismo_api.exception.ResourceNotFoundException;
+import com.projetoDescubraPaulista.turismo_api.models.Usuario;
+import com.projetoDescubraPaulista.turismo_api.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

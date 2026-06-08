@@ -1,4 +1,4 @@
-package com.descubrapaulista.model;
+package com.projetoDescubraPaulista.turismo_api.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

@@ -1,14 +1,15 @@
 package com.projetoDescubraPaulista.turismo_api.service;
 
-import com.projetoDescubraPaulista.turismo_api.dto.RegisterRequestDTO;
-import com.projetoDescubraPaulista.turismo_api.models.Usuario;
-import com.projetoDescubraPaulista.turismo_api.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.projetoDescubraPaulista.turismo_api.dto.RegisterRequestDTO;
+import com.projetoDescubraPaulista.turismo_api.models.Usuario;
+import com.projetoDescubraPaulista.turismo_api.repository.UsuarioRepository;
 
 @Service
 public class AuthService implements UserDetailsService {
@@ -34,7 +35,7 @@ public class AuthService implements UserDetailsService {
         novoUsuario.setNome(dto.nome());
         novoUsuario.setEmail(dto.email());
         novoUsuario.setSenhaHash(passwordEncoder.encode(dto.senha()));
-        novoUsuario.setTipo(dto.role());
+        novoUsuario.setTipo(dto.tipo());
 
         return usuarioRepository.save(novoUsuario);
     }

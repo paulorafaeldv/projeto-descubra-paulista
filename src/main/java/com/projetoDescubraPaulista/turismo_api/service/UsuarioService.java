@@ -1,18 +1,23 @@
 package com.projetoDescubraPaulista.turismo_api.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import com.projetoDescubraPaulista.turismo_api.exception.ResourceNotFoundException;
 import com.projetoDescubraPaulista.turismo_api.models.Usuario;
 import com.projetoDescubraPaulista.turismo_api.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public List<Usuario> listarTodos() {
         return usuarioRepository.findAll();
@@ -27,8 +32,8 @@ public class UsuarioService {
         if (usuarioRepository.existsByEmail(usuario.getEmail())) {
             throw new IllegalArgumentException("Já existe um usuário com este email");
         }
-        // OBSERVAÇÃO DIDÁTICA: em produção, use BCrypt para hashear a senha.
-        // Aqui guardamos como veio para simplificar o exemplo acadêmico.
+        // Criptografa a senha antes de salvar
+        usuario.setSenhaHash(passwordEncoder.encode(usuario.getSenhaHash()));
         return usuarioRepository.save(usuario);
     }
 

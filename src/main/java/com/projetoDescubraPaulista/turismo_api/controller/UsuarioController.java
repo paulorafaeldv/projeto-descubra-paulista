@@ -1,7 +1,6 @@
 package com.projetoDescubraPaulista.turismo_api.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,10 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.projetoDescubraPaulista.turismo_api.models.Usuario;
 import com.projetoDescubraPaulista.turismo_api.service.UsuarioService;
-
 import jakarta.validation.Valid;
 
 @RestController

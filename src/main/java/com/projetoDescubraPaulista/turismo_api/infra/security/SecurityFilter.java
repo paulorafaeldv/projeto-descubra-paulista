@@ -28,18 +28,29 @@ public class SecurityFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+        // 1. Recupera o token do header Authorization
         var token = this.recoverToken(request);
         
         if (token != null) {
+            // 2. Valida o token e recupera o e-mail (subject)
             var email = tokenService.validarToken(token);
-            if (email != null) {
+            
+            if (email != null && !email.isEmpty()) {
+                // 3. Busca o usuário no banco de dados
                 var userOptional = usuarioRepository.findByEmail(email);
+                
                 if (userOptional.isPresent()) {
                     var user = userOptional.get();
-                    // AUTENTICAÇÃO TOTAL: Força o Spring a aceitar este usuário com permissão total
-                    var authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN"));
+                    
+                    // 4. Cria as autoridades (roles) do usuário
+                    var authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
+                    
+                    // 5. Cria o objeto de autenticação do Spring Security
                     var authentication = new UsernamePasswordAuthenticationToken(user, null, authorities);
+                    
+                    // 6. Define a autenticação no contexto do Spring Security
                     SecurityContextHolder.getContext().setAuthentication(authentication);
+                    
                     System.out.println(">>> SUCESSO: Usuário " + email + " autenticado!");
                 } else {
                     System.out.println(">>> ERRO: Usuário não encontrado no banco: " + email);
@@ -51,6 +62,7 @@ public class SecurityFilter extends OncePerRequestFilter {
             System.out.println(">>> AVISO: Nenhuma requisição com Bearer token encontrada.");
         }
         
+        // 7. Continua o fluxo da requisição
         filterChain.doFilter(request, response);
     }
 

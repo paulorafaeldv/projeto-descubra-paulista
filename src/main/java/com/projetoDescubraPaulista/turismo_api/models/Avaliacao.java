@@ -39,7 +39,7 @@ public class Avaliacao {
     @NotNull(message = "O tipo da entidade é obrigatório")
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_entidade", nullable = false, length = 30)
-    private TipoEntidade tipoEntidade;
+    private TipoEntidade tipoEntidade; // Campo padronizado aqui
 
     @NotNull(message = "O id da entidade avaliada é obrigatório")
     @Column(name = "entidade_id", nullable = false)

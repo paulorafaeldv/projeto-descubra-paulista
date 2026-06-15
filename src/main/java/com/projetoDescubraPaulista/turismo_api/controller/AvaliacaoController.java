@@ -1,6 +1,5 @@
 package com.projetoDescubraPaulista.turismo_api.controller;
 
-<<<<<<< HEAD
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,17 +19,6 @@ import com.projetoDescubraPaulista.turismo_api.models.enums.TipoEntidade;
 import com.projetoDescubraPaulista.turismo_api.service.AvaliacaoService;
 
 import jakarta.validation.Valid;
-=======
-import com.projetoDescubraPaulista.turismo_api.models.Avaliacao;
-import com.projetoDescubraPaulista.turismo_api.models.enums.TipoEntidade;
-import com.projetoDescubraPaulista.turismo_api.service.AvaliacaoService;
-import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
->>>>>>> aa5abf510fdf5a066aa05aca82df8623807fdbc6
 
 @RestController
 @RequestMapping("/avaliacoes")
@@ -65,8 +53,4 @@ public class AvaliacaoController {
         avaliacaoService.deletar(id);
         return ResponseEntity.noContent().build();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> aa5abf510fdf5a066aa05aca82df8623807fdbc6

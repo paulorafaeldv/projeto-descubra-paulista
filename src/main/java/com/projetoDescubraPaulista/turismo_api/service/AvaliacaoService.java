@@ -20,8 +20,9 @@ public class AvaliacaoService {
         return avaliacaoRepository.findAll();
     }
 
+    // CORRIGIDO: O nome do método no repositório foi alterado para findByTipoEntidadeAndEntidadeId
     public List<Avaliacao> listarPorEntidade(TipoEntidade tipo, Integer entidadeId) {
-        return avaliacaoRepository.findByEntidadeTipoAndEntidadeId(tipo, entidadeId);
+        return avaliacaoRepository.findByTipoEntidadeAndEntidadeId(tipo, entidadeId);
     }
 
     public Avaliacao buscarPorId(Integer id) {

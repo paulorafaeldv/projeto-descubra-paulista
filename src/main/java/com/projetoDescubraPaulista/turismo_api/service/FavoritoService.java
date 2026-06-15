@@ -1,12 +1,13 @@
 package com.projetoDescubraPaulista.turismo_api.service;
 
-import com.projetoDescubraPaulista.turismo_api.exception.ResourceNotFoundException;
-import com.projetoDescubraPaulista.turismo_api.models.Favorito;
-import com.projetoDescubraPaulista.turismo_api.repository.FavoritoRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.projetoDescubraPaulista.turismo_api.exception.ResourceNotFoundException;
+import com.projetoDescubraPaulista.turismo_api.models.Favorito;
+import com.projetoDescubraPaulista.turismo_api.repository.FavoritoRepository;
 
 @Service
 public class FavoritoService {
@@ -19,7 +20,7 @@ public class FavoritoService {
     }
 
     public Favorito salvar(Favorito favorito) {
-        // evita duplicar favorito do mesmo item para o mesmo usuário
+        // Verifica se já existe um favorito com esses dados para evitar duplicidade
         return favoritoRepository
                 .findByUsuarioIdAndEntidadeTipoAndEntidadeId(
                         favorito.getUsuario().getId(),

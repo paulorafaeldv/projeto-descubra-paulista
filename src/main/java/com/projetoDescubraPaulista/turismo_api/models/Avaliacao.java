@@ -24,35 +24,36 @@ import jakarta.validation.constraints.NotNull;
 public class Avaliacao {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
-    private Usuario usuario;
-
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    @Column(name = "entidade_tipo", nullable = false, length = 30)
-    private TipoEntidade entidadeTipo;
-
-    @NotNull
-    @Column(name = "entidade_id", nullable = false)
-    private Integer entidadeId;
-
-    @Min(value = 1, message = "Nota mínima é 1")
-    @Max(value = 5, message = "Nota máxima é 5")
+    @NotNull(message = "A nota é obrigatória")
+    @Min(value = 1, message = "A nota mínima é 1")
+    @Max(value = 5, message = "A nota máxima é 5")
     @Column(nullable = false)
     private Integer nota;
 
     @Column(columnDefinition = "TEXT")
     private String comentario;
 
+    @NotNull(message = "O tipo da entidade é obrigatório")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_entidade", nullable = false, length = 30)
+    private TipoEntidade tipoEntidade;
+
+    @NotNull(message = "O id da entidade avaliada é obrigatório")
+    @Column(name = "entidade_id", nullable = false)
+    private Integer entidadeId;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
     @Column(name = "criado_em", nullable = false, updatable = false)
     private LocalDateTime criadoEm;
 
     @PrePersist
-    protected void onCreate() {
+    public void prePersist() {
         this.criadoEm = LocalDateTime.now();
     }
 
@@ -60,20 +61,20 @@ public class Avaliacao {
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 
-    public Usuario getUsuario() { return usuario; }
-    public void setUsuario(Usuario usuario) { this.usuario = usuario; }
-
-    public TipoEntidade getEntidadeTipo() { return entidadeTipo; }
-    public void setEntidadeTipo(TipoEntidade entidadeTipo) { this.entidadeTipo = entidadeTipo; }
-
-    public Integer getEntidadeId() { return entidadeId; }
-    public void setEntidadeId(Integer entidadeId) { this.entidadeId = entidadeId; }
-
     public Integer getNota() { return nota; }
     public void setNota(Integer nota) { this.nota = nota; }
 
     public String getComentario() { return comentario; }
     public void setComentario(String comentario) { this.comentario = comentario; }
+
+    public TipoEntidade getTipoEntidade() { return tipoEntidade; }
+    public void setTipoEntidade(TipoEntidade tipoEntidade) { this.tipoEntidade = tipoEntidade; }
+
+    public Integer getEntidadeId() { return entidadeId; }
+    public void setEntidadeId(Integer entidadeId) { this.entidadeId = entidadeId; }
+
+    public Usuario getUsuario() { return usuario; }
+    public void setUsuario(Usuario usuario) { this.usuario = usuario; }
 
     public LocalDateTime getCriadoEm() { return criadoEm; }
     public void setCriadoEm(LocalDateTime criadoEm) { this.criadoEm = criadoEm; }

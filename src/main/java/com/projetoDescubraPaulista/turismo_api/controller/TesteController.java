@@ -1,5 +1,8 @@
 package com.projetoDescubraPaulista.turismo_api.controller;
+<<<<<<< HEAD
 
+=======
+>>>>>>> aa5abf510fdf5a066aa05aca82df8623807fdbc6
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

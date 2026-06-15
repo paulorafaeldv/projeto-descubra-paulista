@@ -1,6 +1,10 @@
 package com.projetoDescubraPaulista.turismo_api.controller;
 
 import java.util.List;
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa5abf510fdf5a066aa05aca82df8623807fdbc6
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,8 +16,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+<<<<<<< HEAD
 import com.projetoDescubraPaulista.turismo_api.models.Usuario;
 import com.projetoDescubraPaulista.turismo_api.service.UsuarioService;
+=======
+
+import com.projetoDescubraPaulista.turismo_api.models.Usuario;
+import com.projetoDescubraPaulista.turismo_api.service.UsuarioService;
+
+>>>>>>> aa5abf510fdf5a066aa05aca82df8623807fdbc6
 import jakarta.validation.Valid;
 
 @RestController
@@ -50,4 +61,8 @@ public class UsuarioController {
         usuarioService.deletar(id);
         return ResponseEntity.noContent().build();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aa5abf510fdf5a066aa05aca82df8623807fdbc6

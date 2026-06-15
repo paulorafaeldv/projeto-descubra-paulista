@@ -25,16 +25,17 @@ public class Favorito {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotNull(message = "O usuário é obrigatório")
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
-    @NotNull
+    @NotNull(message = "O tipo da entidade é obrigatório")
     @Enumerated(EnumType.STRING)
     @Column(name = "entidade_tipo", nullable = false, length = 30)
     private TipoEntidade entidadeTipo;
 
-    @NotNull
+    @NotNull(message = "O id da entidade favoritada é obrigatório")
     @Column(name = "entidade_id", nullable = false)
     private Integer entidadeId;
 
